@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">VandraByApp</string>
+
+    <string name="hint_enter_your_email">Введите ваш e-mail</string>
+    <string name="hint_enter_your_password">Введите ваш пароль</string>
+
+    <string name="text_enter">Войти</string>
+    <string name="text_register">Регистрация</string>
+    <string name="text_forgot_password"><u>Забыли пароль?</u></string>
+    <string name="text_or">Или</string>
+    <string name="text_no_account">Ещё нет аккаунта?</string>
+
 </resources>
