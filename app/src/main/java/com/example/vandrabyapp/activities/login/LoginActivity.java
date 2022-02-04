@@ -1,9 +1,12 @@
-package com.example.vandrabyapp;
+package com.example.vandrabyapp.activities.login;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.vandrabyapp.R;
+import com.example.vandrabyapp.activities.main.MainActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
