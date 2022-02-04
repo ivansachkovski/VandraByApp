@@ -17,7 +17,10 @@
     <string name="menu_trips">Маршруты</string>
     <string name="menu_profile">Профиль</string>
 
-    <!--default value(will be replaced during running application)-->
+    <!--default user values-->
     <string name="text_default_user_name">Имя Пользователя</string>
     <string name="text_default_user_nickname">email@gmail.com</string>
+
+    <!--default place values-->
+    <string name="text_default_place_name">Название объекта</string>
 </resources>

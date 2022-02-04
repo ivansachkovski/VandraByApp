@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.vandrabyapp.R;
 import com.example.vandrabyapp.activities.main.pages.profile.ProfileFragment;
+import com.example.vandrabyapp.activities.main.pages.swipes.SwipesFragment;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,11 +41,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean openSwipesPage() {
+        loadFragment(SwipesFragment.newInstance(), SWIPES_FRAGMENT_TAG, true);
         return true;
     }
 
     private boolean openTripsPage() {
-        return true;
+        return false;
     }
 
     private boolean openProfilePage() {
