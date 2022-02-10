@@ -1,23 +1,37 @@
 package com.example.vandrabyapp.model.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Place {
 
-    private long id;
+    private final long id;
 
-    private String name;
-    private String description;
-    private String type;
-    private long buildYear;
+    private final String name;
+    private final String description;
+    private final String type;
+    private final long buildYear;
 
-    private final List<String> photoUrls = new ArrayList<>();;
+    private final List<String> photoUrls;
 
-    private String locationRegion;
-    private String locationDistrict;
-    private String locationLocalityType;
-    private String locationLocalityName;
+    private final String locationRegion;
+    private final String locationDistrict;
+    private final String locationLocalityType;
+    private final String locationLocalityName;
+
+    public Place(long id, String name, String description, String type, long buildYear,
+                 List<String> photoUrls, String locationRegion, String locationDistrict,
+                 String locationLocalityType, String locationLocalityName) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.type = type;
+        this.buildYear = buildYear;
+        this.photoUrls = photoUrls;
+        this.locationRegion = locationRegion;
+        this.locationDistrict = locationDistrict;
+        this.locationLocalityType = locationLocalityType;
+        this.locationLocalityName = locationLocalityName;
+    }
 
     public long getId() {
         return id;
