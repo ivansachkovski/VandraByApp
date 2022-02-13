@@ -13,7 +13,7 @@
     <me.relex.circleindicator.CircleIndicator3
         android:id="@+id/indicator"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
+        android:layout_height="10dp"
         android:layout_gravity="bottom"
         android:layout_marginBottom="15dp"
         app:ci_animator="@animator/no_scale"
