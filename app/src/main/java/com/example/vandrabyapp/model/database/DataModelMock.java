@@ -25,7 +25,16 @@ public class DataModelMock extends DataModel {
 
     @Override
     public List<Place> getUnratedPlaces() {
-        return places;
+        List<Place> result = new ArrayList<>();
+
+        for (Place place : places) {
+            long placeId = place.getId();
+            if (!user.isPlaceLiked(placeId) && !user.isPlaceDisliked(placeId) && !user.isPlaceVisited(placeId)) {
+                result.add(place);
+            }
+        }
+
+        return result;
     }
 
     @Override
