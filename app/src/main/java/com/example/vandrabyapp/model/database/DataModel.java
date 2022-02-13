@@ -25,4 +25,10 @@ public abstract class DataModel {
     public abstract List<Place> getUserLikedPlaces();
 
     public abstract List<Place> getUserVisitedPlaces();
+
+    public abstract void markPlaceAsLiked(long placeId);
+
+    public abstract void markPlaceAsDisliked(long placeId);
+
+    public abstract void markPlaceAsVisited(long placeId);
 }

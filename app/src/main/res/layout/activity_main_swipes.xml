@@ -34,7 +34,7 @@
         </androidx.cardview.widget.CardView>
 
         <FrameLayout
-            android:id="@+id/view_pager_fragment"
+            android:id="@+id/layout_photo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1" />

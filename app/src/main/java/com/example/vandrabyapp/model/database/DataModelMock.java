@@ -38,6 +38,21 @@ public class DataModelMock extends DataModel {
         return places;
     }
 
+    @Override
+    public void markPlaceAsLiked(long placeId) {
+        user.addLikedPlace(placeId);
+    }
+
+    @Override
+    public void markPlaceAsDisliked(long placeId) {
+        user.addDislikedPlace(placeId);
+    }
+
+    @Override
+    public void markPlaceAsVisited(long placeId) {
+        user.addVisitedPlace(placeId);
+    }
+
     private void initUser() {
         user = new User();
         user.setName("Временный пользователь");

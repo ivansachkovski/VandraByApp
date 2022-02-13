@@ -55,12 +55,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadFragment(Fragment fragment, String tag, boolean saveState) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.layout_content, fragment, tag);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.layout_content, fragment, tag);
 
         if (saveState) {
-            fragmentTransaction = fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.addToBackStack(null);
         }
 
         fragmentTransaction.commit();
