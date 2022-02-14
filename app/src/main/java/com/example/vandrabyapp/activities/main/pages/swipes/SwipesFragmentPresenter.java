@@ -1,5 +1,6 @@
 package com.example.vandrabyapp.activities.main.pages.swipes;
 
+import com.example.vandrabyapp.activities.main.MainActivity;
 import com.example.vandrabyapp.model.database.DataModel;
 import com.example.vandrabyapp.model.entities.Place;
 
@@ -36,7 +37,11 @@ public class SwipesFragmentPresenter implements SwipesFragmentContract.Presenter
 
     @Override
     public void clickOpenPlaceDetails() {
-        // Place place = model.getPlaceToRate();
+        Place place = model.getPlaceToRate();
+
+        SwipesFragment swipesFragment = (SwipesFragment) view;
+        MainActivity mainActivity = (MainActivity) swipesFragment.getActivity();
+        mainActivity.onOpenPlaceDetailsPage(place);
     }
 
     @Override

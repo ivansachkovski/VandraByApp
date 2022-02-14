@@ -24,4 +24,7 @@
     <!--default place values-->
     <string name="text_default_place_name">Название объекта</string>
     <string name="text_default_place_location">РБ, Минская обл, город Минск</string>
+    <string name="text_default_place_description">Длинное описание места</string>
+    <string name="text_default_place_build_year">2999</string>
+    <string name="text_default_place_style">Барокко</string>
 </resources>

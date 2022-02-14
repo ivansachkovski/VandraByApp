@@ -7,8 +7,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.vandrabyapp.R;
+import com.example.vandrabyapp.activities.main.pages.details.PlaceDetailsFragment;
 import com.example.vandrabyapp.activities.main.pages.profile.ProfileFragment;
 import com.example.vandrabyapp.activities.main.pages.swipes.SwipesFragment;
+import com.example.vandrabyapp.model.entities.Place;
 import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String PROFILE_FRAGMENT_TAG = "ProfileFragment";
     private static final String SWIPES_FRAGMENT_TAG = "SwipesFragment";
     private static final String TRIPS_FRAGMENT_TAG = "TripsFragment";
+    private static final String PLACE_DETAILS_FRAGMENT_TAG = "PlaceDetailsFragment";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,5 +66,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         fragmentTransaction.commit();
+    }
+
+    public void onOpenPlaceDetailsPage(Place place) {
+        loadFragment(PlaceDetailsFragment.newInstance(place), PLACE_DETAILS_FRAGMENT_TAG, true);
     }
 }

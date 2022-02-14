@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vandrabyapp.R;
+import com.example.vandrabyapp.activities.main.MainActivity;
 import com.example.vandrabyapp.model.entities.Place;
 import com.squareup.picasso.Picasso;
 
@@ -27,6 +28,7 @@ public class ProfilesPlacesTabAdapter extends RecyclerView.Adapter<RecyclerView.
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        parent.getRootView();
         return new PlaceViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_profile_tab_place, parent, false));
     }
 
@@ -73,7 +75,8 @@ public class ProfilesPlacesTabAdapter extends RecyclerView.Adapter<RecyclerView.
 
         @Override
         public void onClick(View v) {
-            //mPlaceDetailsPageListener.onOpenPlaceDetailsPage(mPlace);
+            MainActivity mainActivity = (MainActivity) itemView.getContext();
+            mainActivity.onOpenPlaceDetailsPage(place);
         }
     }
 }
