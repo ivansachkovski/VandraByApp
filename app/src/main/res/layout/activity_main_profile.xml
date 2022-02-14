@@ -19,11 +19,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="30dp"
+                android:background="@color/blue"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
+                android:paddingHorizontal="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="30dp"
                 app:layout_collapseMode="none">
 
                 <ImageView
@@ -45,6 +46,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
                         android:text="@string/text_default_user_name"
+                        android:textColor="@color/white"
                         android:textSize="19sp"
                         android:textStyle="bold" />
 
@@ -53,6 +55,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/text_default_user_nickname"
+                        android:textColor="@color/white"
                         android:textSize="16sp"
                         android:textStyle="normal" />
 
@@ -73,8 +76,8 @@
                     android:layout_height="wrap_content"
                     app:layout_collapseMode="pin"
                     app:tabIndicatorColor="@color/dark_blue"
-                    app:tabSelectedTextColor="@color/black"
-                    app:tabTextColor="@color/gray" />
+                    app:tabSelectedTextColor="@color/dark_blue"
+                    app:tabTextColor="@color/black" />
 
             </androidx.appcompat.widget.Toolbar>
 

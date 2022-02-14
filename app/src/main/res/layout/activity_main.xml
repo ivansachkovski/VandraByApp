@@ -10,7 +10,7 @@
         android:id="@+id/layout_toolbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/header_height"
-        android:background="#F2F2F2"
+        android:background="@color/blue"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
