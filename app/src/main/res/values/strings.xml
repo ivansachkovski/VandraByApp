@@ -23,4 +23,5 @@
 
     <!--default place values-->
     <string name="text_default_place_name">Название объекта</string>
+    <string name="text_default_place_location">РБ, Минская обл, город Минск</string>
 </resources>

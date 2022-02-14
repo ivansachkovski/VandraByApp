@@ -39,7 +39,16 @@ public class DataModelMock extends DataModel {
 
     @Override
     public List<Place> getUserLikedPlaces() {
-        return places;
+        List<Place> result = new ArrayList<>();
+
+        for (Place place : places) {
+            long placeId = place.getId();
+            if (user.isPlaceLiked(placeId)) {
+                result.add(place);
+            }
+        }
+
+        return result;
     }
 
     @Override

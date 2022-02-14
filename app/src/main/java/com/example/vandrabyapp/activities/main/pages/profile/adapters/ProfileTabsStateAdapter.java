@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vandrabyapp.R;
+import com.example.vandrabyapp.model.database.DataModel;
 
 public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.FragmentStateAdapter {
 
@@ -54,7 +55,7 @@ public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.Fragmen
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab, null);
-            //view.setAdapter(new PlacesViewAdapter(DataModel.getInstance().getUserLikedPlaces(), placeDetailsPageListener, 0));
+            view.setAdapter(new ProfilesPlacesTabAdapter(DataModel.getInstance().getUserLikedPlaces()));
             return view;
         }
     }
