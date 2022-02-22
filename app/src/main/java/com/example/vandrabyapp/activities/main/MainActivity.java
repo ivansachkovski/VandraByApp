@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.vandrabyapp.R;
+import com.example.vandrabyapp.activities.main.pages.createtrip.CreateTripFragment;
 import com.example.vandrabyapp.activities.main.pages.details.PlaceDetailsFragment;
 import com.example.vandrabyapp.activities.main.pages.profile.ProfileFragment;
 import com.example.vandrabyapp.activities.main.pages.swipes.SwipesFragment;
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String PROFILE_FRAGMENT_TAG = "ProfileFragment";
     private static final String SWIPES_FRAGMENT_TAG = "SwipesFragment";
-    private static final String TRIPS_FRAGMENT_TAG = "TripsFragment";
+    private static final String CREATE_TRIP_FRAGMENT_TAG = "CreateTripFragment";
     private static final String PLACE_DETAILS_FRAGMENT_TAG = "PlaceDetailsFragment";
 
     @Override
@@ -49,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean openTripsPage() {
-        return false;
+        loadFragment(CreateTripFragment.newInstance(), CREATE_TRIP_FRAGMENT_TAG, true);
+        return true;
     }
 
     private boolean openProfilePage() {
