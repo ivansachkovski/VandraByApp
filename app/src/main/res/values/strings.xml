@@ -11,6 +11,17 @@
     <string name="text_forgot_password"><u>Забыли пароль?</u></string>
     <string name="text_or">Или</string>
     <string name="text_no_account">Ещё нет аккаунта?</string>
+    <string name="text_next">Далее</string>
+    <string name="text_start_point">Откуда поедете?</string>
+    <string name="text_end_point">Выберите конечную точку маршрута.</string>
+    <string name="text_save_trip">Сохранить маршрут</string>
+    
+    <!--text for radio buttons-->
+    <string name="text_my_location">Моё местоположение</string>
+    <string name="text_indicate_on_map">Указать на карте</string>
+    <string name="text_choose_place">Выбрать населённый пункт</string>
+    <string name="text_return_to_start">Вернуться в точку отправления</string>
+    <string name="text_choose_from_trip_places">Выбрать из объектов маршрута</string>
 
     <!--text for menu items-->
     <string name="menu_swipes">Свайпы</string>
