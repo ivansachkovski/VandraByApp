@@ -6,25 +6,31 @@
     android:layout_height="match_parent"
     android:background="@drawable/image_background"
     android:orientation="vertical"
-    android:padding="15dp"
     tools:context=".activities.main.MainActivity">
 
     <androidx.appcompat.widget.SearchView
-        android:background="@color/white"
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="50dp"
+        android:layout_margin="15dp"
+        android:background="@color/white" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_places"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <Button
             android:id="@+id/button_next"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/selector_blue_button"
             android:text="@string/text_next"
             android:textAllCaps="false"
