@@ -40,22 +40,47 @@
 
                     <RadioGroup
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:checkedButton="@id/rb_from_current_location">
+
+                        <RadioButton
+                            android:id="@+id/rb_from_current_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/selector_radio_button_background"
+                            android:button="@null"
+                            android:drawableStart="@drawable/ic_create_trip_arrow"
+                            android:drawableEnd="@drawable/selector_radio_button_check"
+                            android:drawablePadding="15dp"
+                            android:paddingHorizontal="15dp"
+                            android:text="@string/text_my_location"
+                            android:textStyle="bold" />
 
                         <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_my_location" />
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/selector_radio_button_background"
+                            android:button="@null"
+                            android:drawableStart="@drawable/ic_create_trip_map_pin"
+                            android:drawableEnd="@drawable/selector_radio_button_check"
+                            android:drawablePadding="15dp"
+                            android:paddingHorizontal="15dp"
+                            android:text="@string/text_indicate_on_map"
+                            android:textStyle="bold" />
 
                         <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_indicate_on_map" />
-
-                        <RadioButton
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/text_choose_place" />
+                            android:background="@drawable/selector_radio_button_background"
+                            android:button="@null"
+                            android:drawableStart="@drawable/ic_create_trip_building"
+                            android:drawableEnd="@drawable/selector_radio_button_check"
+                            android:drawablePadding="15dp"
+                            android:paddingHorizontal="15dp"
+                            android:text="@string/text_choose_place"
+                            android:textStyle="bold" />
 
                     </RadioGroup>
 
@@ -87,29 +112,60 @@
 
                     <RadioGroup
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:checkedButton="@id/rb_to_start_point">
+
+                        <RadioButton
+                            android:id="@+id/rb_to_start_point"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/selector_radio_button_background"
+                            android:button="@null"
+                            android:drawableStart="@drawable/ic_create_trip_arrow"
+                            android:drawableEnd="@drawable/selector_radio_button_check"
+                            android:drawablePadding="15dp"
+                            android:paddingHorizontal="15dp"
+                            android:text="@string/text_return_to_start"
+                            android:textStyle="bold" />
 
                         <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_return_to_start" />
-
-
-                        <RadioButton
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/text_indicate_on_map" />
-
-
-                        <RadioButton
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/text_choose_from_trip_places" />
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/selector_radio_button_background"
+                            android:button="@null"
+                            android:drawableStart="@drawable/ic_create_trip_map_pin"
+                            android:drawableEnd="@drawable/selector_radio_button_check"
+                            android:drawablePadding="15dp"
+                            android:paddingHorizontal="15dp"
+                            android:text="@string/text_indicate_on_map"
+                            android:textStyle="bold" />
 
                         <RadioButton
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/text_choose_place" />
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/selector_radio_button_background"
+                            android:button="@null"
+                            android:drawableStart="@drawable/ic_create_trip_check_marks"
+                            android:drawableEnd="@drawable/selector_radio_button_check"
+                            android:drawablePadding="15dp"
+                            android:paddingHorizontal="15dp"
+                            android:text="@string/text_choose_from_trip_places"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/selector_radio_button_background"
+                            android:button="@null"
+                            android:drawableStart="@drawable/ic_create_trip_building"
+                            android:drawableEnd="@drawable/selector_radio_button_check"
+                            android:drawablePadding="15dp"
+                            android:paddingHorizontal="15dp"
+                            android:text="@string/text_choose_place"
+                            android:textStyle="bold" />
 
                     </RadioGroup>
 
