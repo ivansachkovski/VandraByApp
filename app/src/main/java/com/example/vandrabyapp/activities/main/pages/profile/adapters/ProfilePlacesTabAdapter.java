@@ -17,18 +17,17 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 
-public class ProfilesPlacesTabAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ProfilePlacesTabAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final List<Place> items;
 
-    public ProfilesPlacesTabAdapter(List<Place> items) {
+    public ProfilePlacesTabAdapter(List<Place> items) {
         this.items = items;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        parent.getRootView();
         return new PlaceViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_profile_tab_place, parent, false));
     }
 

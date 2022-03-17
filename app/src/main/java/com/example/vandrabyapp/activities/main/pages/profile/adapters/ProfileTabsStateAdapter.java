@@ -55,7 +55,7 @@ public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.Fragmen
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab, null);
-            view.setAdapter(new ProfilesPlacesTabAdapter(DataModel.getInstance().getUserLikedPlaces()));
+            view.setAdapter(new ProfilePlacesTabAdapter(DataModel.getInstance().getUserLikedPlaces()));
             return view;
         }
     }
