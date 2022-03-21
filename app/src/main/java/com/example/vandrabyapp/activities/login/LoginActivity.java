@@ -2,6 +2,7 @@ package com.example.vandrabyapp.activities.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Button button_login = findViewById(R.id.button_login);
+        button_login.setOnClickListener(v -> {
+            openMainActivity();
+        });
     }
 
     @Override
@@ -24,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         DataModel dataModel = DataModel.getInstance();
         dataModel.init(); // todo::move it to splash activity
 
-        openMainActivity();
+        // openMainActivity();
     }
 
     private void openMainActivity() {

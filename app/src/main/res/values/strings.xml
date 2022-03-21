@@ -12,6 +12,7 @@
     <string name="text_or">Или</string>
     <string name="text_no_account">Ещё нет аккаунта?</string>
     <string name="text_next">Далее</string>
+    <string name="text_skip">Пропустить</string>
     <string name="text_start_point">Откуда поедете?</string>
     <string name="text_end_point">Выберите конечную точку маршрута.</string>
     <string name="text_save_trip">Сохранить маршрут</string>
@@ -38,4 +39,9 @@
     <string name="text_default_place_description">Длинное описание места</string>
     <string name="text_default_place_build_year">2999</string>
     <string name="text_default_place_style">Барокко</string>
+
+    <!--onboarding activity texts-->
+    <string name="text_onboarding_1">Выбирайте понравившиеся достопримечательности</string>
+    <string name="text_onboarding_2">Добавляйте их в маршрут</string>
+    <string name="text_onboarding_3">Путешествуйте и открывайте для себя Беларусь!</string>
 </resources>
