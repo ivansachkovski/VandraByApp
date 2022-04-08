@@ -1,9 +1,11 @@
 package com.example.vandrabyapp.activities.main.pages.details;
 
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -16,13 +18,15 @@ import com.example.vandrabyapp.model.entities.Place;
 public class PlaceDetailsFragment extends Fragment {
 
     private final Place place;
+    private final boolean shouldRate;
 
-    private PlaceDetailsFragment(Place place) {
+    private PlaceDetailsFragment(Place place, boolean shouldRate) {
         this.place = place;
+        this.shouldRate = shouldRate;
     }
 
-    public static PlaceDetailsFragment newInstance(Place place) {
-        return new PlaceDetailsFragment(place);
+    public static PlaceDetailsFragment newInstance(Place place, boolean shouldRate) {
+        return new PlaceDetailsFragment(place, shouldRate);
     }
 
     @Override
@@ -52,6 +56,12 @@ public class PlaceDetailsFragment extends Fragment {
 
         TextView textPlaceStyle = view.findViewById(R.id.text_place_style);
         textPlaceStyle.setText(place.getType()); // todo::change to style
+
+        if (!shouldRate) {
+            // Hide buttons Like and Dislike
+            LinearLayout layoutButtonsLikeAndDislike = view.findViewById(R.id.layout_buttons_like_dislike);
+            layoutButtonsLikeAndDislike.setVisibility(View.INVISIBLE);
+        }
 
         return view;
     }

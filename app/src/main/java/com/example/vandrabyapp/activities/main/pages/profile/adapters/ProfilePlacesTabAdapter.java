@@ -75,7 +75,7 @@ public class ProfilePlacesTabAdapter extends RecyclerView.Adapter<RecyclerView.V
         @Override
         public void onClick(View v) {
             MainActivity mainActivity = (MainActivity) itemView.getContext();
-            mainActivity.onOpenPlaceDetailsPage(place);
+            mainActivity.onOpenPlaceDetailsPage(place, false);
         }
     }
 }

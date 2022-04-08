@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void onOpenPlaceDetailsPage(Place place) {
-        loadFragment(PlaceDetailsFragment.newInstance(place), PLACE_DETAILS_FRAGMENT_TAG, true);
+    public void onOpenPlaceDetailsPage(Place place, boolean shouldRate) {
+        loadFragment(PlaceDetailsFragment.newInstance(place, shouldRate), PLACE_DETAILS_FRAGMENT_TAG, true);
     }
 }
