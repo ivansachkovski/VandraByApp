@@ -49,9 +49,12 @@ public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         private Place place;
 
+        private final View rootView;
         private final ImageView imagePlacePhoto;
         private final TextView textPlaceName;
         private final TextView textPlaceLocation;
+
+        private boolean isSelected = false; // by default all the places are unselected
 
         PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +62,7 @@ public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.V
             imagePlacePhoto = itemView.findViewById(R.id.image_place_photo);
             textPlaceName = itemView.findViewById(R.id.text_place_name);
             textPlaceLocation = itemView.findViewById(R.id.text_place_location);
+            rootView = itemView;
 
             itemView.setOnClickListener(this);
         }
@@ -69,11 +73,20 @@ public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.V
             textPlaceName.setText(item.getName());
             textPlaceLocation.setText(item.getFormattedLocation());
             Picasso.with(imagePlacePhoto.getContext()).load(item.getPhotoUrls().get(0)).fit().into(imagePlacePhoto);
+
+            if (isSelected) {
+                rootView.setForeground(rootView.getContext().getDrawable(R.drawable.layout_chosen_place));
+            } else {
+                rootView.setForeground(null);
+            }
         }
 
         @Override
         public void onClick(View v) {
-            // todo::
+            // Change state of current item
+            isSelected = !isSelected;
+            // Re-draw current item
+            fillItem(place);
         }
     }
 }

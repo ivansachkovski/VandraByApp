@@ -34,6 +34,7 @@ public class CreateTripFragment extends Fragment implements CreateTripFragmentCo
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main_create_trip, null);
 
+        // Open start create trip page
         openSubpage1();
 
         return view;

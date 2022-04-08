@@ -13,6 +13,7 @@
     <string name="text_no_account">Ещё нет аккаунта?</string>
     <string name="text_next">Далее</string>
     <string name="text_skip">Пропустить</string>
+    <string name="text_start">Начать</string>
     <string name="text_start_point">Откуда поедете?</string>
     <string name="text_end_point">Выберите конечную точку маршрута.</string>
     <string name="text_save_trip">Сохранить маршрут</string>
