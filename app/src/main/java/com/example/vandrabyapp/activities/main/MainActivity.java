@@ -21,12 +21,14 @@ public class MainActivity extends AppCompatActivity {
     private static final String CREATE_TRIP_FRAGMENT_TAG = "CreateTripFragment";
     private static final String PLACE_DETAILS_FRAGMENT_TAG = "PlaceDetailsFragment";
 
+    private NavigationBarView bottomNavigationBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        NavigationBarView bottomNavigationBar = findViewById(R.id.bottom_navigation_panel);
+        bottomNavigationBar = findViewById(R.id.bottom_navigation_panel);
         bottomNavigationBar.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.item_swipes:
@@ -41,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // choose default screen
+        bottomNavigationBar.setSelectedItemId(R.id.item_profile);
+    }
+
+    public void goToProfilePage() {
         bottomNavigationBar.setSelectedItemId(R.id.item_profile);
     }
 

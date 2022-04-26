@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vandrabyapp.R;
+import com.example.vandrabyapp.activities.main.pages.createtrip.CreateTripFragmentContract;
 import com.example.vandrabyapp.model.entities.Place;
 import com.squareup.picasso.Picasso;
 
@@ -18,16 +19,18 @@ import java.util.List;
 
 public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    private final CreateTripFragmentContract.Presenter presenter;
     private final List<Place> items;
 
-    public CreateTripPlacesAdapter(List<Place> items) {
+    public CreateTripPlacesAdapter(CreateTripFragmentContract.Presenter presenter, List<Place> items) {
+        this.presenter = presenter;
         this.items = items;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new PlaceViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_profile_tab_place, parent, false));
+        return new PlaceViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_profile_tab_liked_item, parent, false), presenter);
     }
 
     @Override
@@ -54,15 +57,19 @@ public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.V
         private final TextView textPlaceName;
         private final TextView textPlaceLocation;
 
+        private final CreateTripFragmentContract.Presenter presenter;
+
         private boolean isSelected = false; // by default all the places are unselected
 
-        PlaceViewHolder(@NonNull View itemView) {
+        PlaceViewHolder(@NonNull View itemView, CreateTripFragmentContract.Presenter presenter) {
             super(itemView);
 
             imagePlacePhoto = itemView.findViewById(R.id.image_place_photo);
             textPlaceName = itemView.findViewById(R.id.text_place_name);
             textPlaceLocation = itemView.findViewById(R.id.text_place_location);
             rootView = itemView;
+
+            this.presenter = presenter;
 
             itemView.setOnClickListener(this);
         }
@@ -87,6 +94,11 @@ public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.V
             isSelected = !isSelected;
             // Re-draw current item
             fillItem(place);
+            if (isSelected) {
+                presenter.addPlaceToTrip(place);
+            } else {
+                presenter.removePlaceFromTrip(place);
+            }
         }
     }
 }

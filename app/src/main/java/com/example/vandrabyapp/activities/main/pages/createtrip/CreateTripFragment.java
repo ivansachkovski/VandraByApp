@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.vandrabyapp.R;
+import com.example.vandrabyapp.activities.main.MainActivity;
 import com.example.vandrabyapp.activities.main.pages.createtrip.subpages.CreateTripSubpage1Fragment;
 import com.example.vandrabyapp.activities.main.pages.createtrip.subpages.CreateTripSubpage2Fragment;
 import com.example.vandrabyapp.activities.main.pages.createtrip.subpages.CreateTripSubpage3Fragment;
@@ -41,7 +42,6 @@ public class CreateTripFragment extends Fragment implements CreateTripFragmentCo
     }
 
     private void loadFragment(Fragment fragment, String tag) {
-
         FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.layout_content, fragment, tag);
         fragmentTransaction.addToBackStack(null);
@@ -65,5 +65,9 @@ public class CreateTripFragment extends Fragment implements CreateTripFragmentCo
 
     @Override
     public void openSaveTripDialog() {
+        // 1. Open Save Trip Dialog with 2 buttons: Save & Cancel
+        // 2. If user clicked Save - save trip and go to Profile page
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.goToProfilePage();
     }
 }

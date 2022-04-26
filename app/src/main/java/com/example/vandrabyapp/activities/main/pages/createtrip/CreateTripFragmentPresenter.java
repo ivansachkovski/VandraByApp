@@ -1,5 +1,8 @@
 package com.example.vandrabyapp.activities.main.pages.createtrip;
 
+import com.example.vandrabyapp.model.database.DataModel;
+import com.example.vandrabyapp.model.entities.Place;
+
 public class CreateTripFragmentPresenter implements CreateTripFragmentContract.Presenter {
 
     private final CreateTripFragmentContract.View view;
@@ -25,6 +28,17 @@ public class CreateTripFragmentPresenter implements CreateTripFragmentContract.P
     @Override
     public void clickSaveTrip() {
         // todo::load data from the screen
+        model.saveTrip();
         view.openSaveTripDialog();
+    }
+
+    @Override
+    public void addPlaceToTrip(Place place) {
+        model.addPlace(place);
+    }
+
+    @Override
+    public void removePlaceFromTrip(Place place) {
+        model.removePlace(place);
     }
 }

@@ -54,7 +54,7 @@ public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.Fragmen
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab, null);
+            RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab_liked, null);
             view.setAdapter(new ProfilePlacesTabAdapter(DataModel.getInstance().getUserLikedPlaces()));
             return view;
         }
@@ -74,8 +74,8 @@ public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.Fragmen
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab, null);
-            // TODO::implement
+            RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab_trips, null);
+            view.setAdapter(new ProfileTripsTabAdapter(DataModel.getInstance().getTrips()));
             return view;
         }
     }
@@ -94,7 +94,7 @@ public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.Fragmen
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab, null);
+            RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab_liked, null);
             // TODO::implement
             return view;
         }

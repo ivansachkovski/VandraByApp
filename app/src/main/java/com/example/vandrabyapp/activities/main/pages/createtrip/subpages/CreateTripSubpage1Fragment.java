@@ -33,7 +33,7 @@ public class CreateTripSubpage1Fragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_main_create_trip_1, null);
 
         RecyclerView recyclerViewPlaces = view.findViewById(R.id.recycler_view_places);
-        recyclerViewPlaces.setAdapter(new CreateTripPlacesAdapter(DataModel.getInstance().getUserLikedPlaces()));
+        recyclerViewPlaces.setAdapter(new CreateTripPlacesAdapter(presenter, DataModel.getInstance().getUserLikedPlaces()));
         recyclerViewPlaces.setLayoutManager(new LinearLayoutManager(getContext()));
 
         Button button_next = view.findViewById(R.id.button_next);

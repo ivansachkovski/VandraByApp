@@ -45,4 +45,7 @@
     <string name="text_onboarding_1">Выбирайте понравившиеся достопримечательности</string>
     <string name="text_onboarding_2">Добавляйте их в маршрут</string>
     <string name="text_onboarding_3">Путешествуйте и открывайте для себя Беларусь!</string>
+
+    <!--default trip values-->
+    <string name="text_default_trip_name">Название маршрута</string>
 </resources>

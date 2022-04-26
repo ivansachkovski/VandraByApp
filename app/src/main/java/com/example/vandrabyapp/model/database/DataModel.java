@@ -1,6 +1,7 @@
 package com.example.vandrabyapp.model.database;
 
 import com.example.vandrabyapp.model.entities.Place;
+import com.example.vandrabyapp.model.entities.Trip;
 import com.example.vandrabyapp.model.entities.User;
 
 import java.util.List;
@@ -31,4 +32,8 @@ public abstract class DataModel {
     public abstract void markPlaceAsDisliked(long placeId);
 
     public abstract void markPlaceAsVisited(long placeId);
+
+    public abstract void addTrip(Trip trip);
+
+    public abstract List<Trip> getTrips();
 }
