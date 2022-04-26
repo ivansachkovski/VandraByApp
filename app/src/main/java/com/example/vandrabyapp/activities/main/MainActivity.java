@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationBar.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.item_swipes:
-                    return openSwipesPage();
+                    return loadSwipesPage();
                 case R.id.item_trips:
-                    return openTripsPage();
+                    return loadCreateTripsPage();
                 case R.id.item_profile:
-                    return openProfilePage();
+                    return loadProfilePage();
                 default:
                     return false;
             }
@@ -46,37 +46,40 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationBar.setSelectedItemId(R.id.item_profile);
     }
 
-    public void goToProfilePage() {
+    public void openProfilePage() {
+        // Open page via triggering bottom navigation bar
         bottomNavigationBar.setSelectedItemId(R.id.item_profile);
     }
 
-    private boolean openSwipesPage() {
+    public void openPlaceDetailsPage(Place place, boolean shouldRate) {
+        loadPlaceDetailsPage(place, shouldRate);
+    }
+
+    private boolean loadSwipesPage() {
         loadFragment(SwipesFragment.newInstance(), SWIPES_FRAGMENT_TAG, true);
         return true;
     }
 
-    private boolean openTripsPage() {
+    private boolean loadCreateTripsPage() {
         loadFragment(CreateTripFragment.newInstance(), CREATE_TRIP_FRAGMENT_TAG, true);
         return true;
     }
 
-    private boolean openProfilePage() {
+    private boolean loadProfilePage() {
         loadFragment(ProfileFragment.newInstance(), PROFILE_FRAGMENT_TAG, true);
         return true;
+    }
+
+    private void loadPlaceDetailsPage(Place place, boolean shouldRate) {
+        loadFragment(PlaceDetailsFragment.newInstance(place, shouldRate), PLACE_DETAILS_FRAGMENT_TAG, true);
     }
 
     private void loadFragment(Fragment fragment, String tag, boolean saveState) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.layout_content, fragment, tag);
-
         if (saveState) {
             fragmentTransaction.addToBackStack(null);
         }
-
         fragmentTransaction.commit();
-    }
-
-    public void onOpenPlaceDetailsPage(Place place, boolean shouldRate) {
-        loadFragment(PlaceDetailsFragment.newInstance(place, shouldRate), PLACE_DETAILS_FRAGMENT_TAG, true);
     }
 }

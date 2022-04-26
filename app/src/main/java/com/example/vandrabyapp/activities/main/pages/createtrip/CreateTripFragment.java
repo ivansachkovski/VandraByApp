@@ -65,9 +65,10 @@ public class CreateTripFragment extends Fragment implements CreateTripFragmentCo
 
     @Override
     public void openSaveTripDialog() {
-        // 1. Open Save Trip Dialog with 2 buttons: Save & Cancel
-        // 2. If user clicked Save - save trip and go to Profile page
+        // 1. Open Save Trip Dialog with 1 edit box and 1 button "Save"
+        // 2. If user click "Save" - save trip and go to Profile page
         MainActivity mainActivity = (MainActivity) getActivity();
-        mainActivity.goToProfilePage();
+        assert mainActivity != null;
+        mainActivity.openProfilePage();
     }
 }

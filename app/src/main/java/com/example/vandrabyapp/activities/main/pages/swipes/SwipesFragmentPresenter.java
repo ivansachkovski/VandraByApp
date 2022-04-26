@@ -41,7 +41,8 @@ public class SwipesFragmentPresenter implements SwipesFragmentContract.Presenter
 
         SwipesFragment swipesFragment = (SwipesFragment) view;
         MainActivity mainActivity = (MainActivity) swipesFragment.getActivity();
-        mainActivity.onOpenPlaceDetailsPage(place, true);
+        assert mainActivity != null;
+        mainActivity.openPlaceDetailsPage(place, true);
     }
 
     @Override
