@@ -1,7 +1,7 @@
 package com.example.vandrabyapp.model.database;
 
 import com.example.vandrabyapp.model.entities.Place;
-import com.example.vandrabyapp.model.entities.Trip;
+import com.example.vandrabyapp.model.entities.Route;
 import com.example.vandrabyapp.model.entities.User;
 
 import java.util.ArrayList;
@@ -12,13 +12,13 @@ public class DataModelMock extends DataModel {
 
     private User user;
     private List<Place> places;
-    private List<Trip> trips;
+    private List<Route> routes;
 
     @Override
     public void init() {
         initUser();
         initPlaces();
-        initTrips();
+        initRoutes();
     }
 
     @Override
@@ -75,13 +75,13 @@ public class DataModelMock extends DataModel {
     }
 
     @Override
-    public void addTrip(Trip trip) {
-        trips.add(trip);
+    public void addRoute(Route route) {
+        routes.add(route);
     }
 
     @Override
-    public List<Trip> getTrips() {
-        return trips;
+    public List<Route> getRoutes() {
+        return routes;
     }
 
     private void initUser() {
@@ -98,7 +98,7 @@ public class DataModelMock extends DataModel {
         places.add(new Place(4, "Красный костёл", "Костёл святого Симеона и святой Елены (белор. Касцёл святога Сымона і святой Алены, польск. Kościół św. Szymona i Heleny), часто называемый также Красным костёлом — наиболее известный католический храм Минска.\r\n\r\nАдминистративно относится к юго-восточному деканату Минско-Могилёвской архиепархии. Памятник архитектуры, включён в Государственный список историко-культурных ценностей Республики Беларусь (код 713Г000229)[1]. В ряде источников, включая воспоминания самого фундатора храма Эдварда Войниловича, стиль храма характеризуется как неороманский[2], в ряде других, как неоготика с чертами модерна[1][3].\r\n\r\nКостёл находится на площади Независимости в непосредственной близости от Дома Правительства.", "Костёл", 1910, Arrays.asList("https://upload.wikimedia.org/wikipedia/commons/3/39/%D0%9A%D0%BE%D1%81%D1%82%D0%B5%D0%BB_%D0%A1%D0%B8%D0%BC%D0%BE%D0%BD%D0%B0_%D0%B8_%D0%90%D0%BB%D0%B5%D0%BD%D1%8B_3.jpg", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Belarus-Minsk-Church_of_Simon_and_Helena-7-2.jpg/220px-Belarus-Minsk-Church_of_Simon_and_Helena-7-2.jpg"), "Минская", "Минский", "город", "Минск"));
     }
 
-    private void initTrips() {
-        trips = new ArrayList<>();
+    private void initRoutes() {
+        routes = new ArrayList<>();
     }
 }

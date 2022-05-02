@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.vandrabyapp.R;
-import com.example.vandrabyapp.activities.main.pages.createtrip.CreateTripFragment;
+import com.example.vandrabyapp.activities.main.pages.createroute.CreateRouteFragment;
 import com.example.vandrabyapp.activities.main.pages.details.PlaceDetailsFragment;
 import com.example.vandrabyapp.activities.main.pages.profile.ProfileFragment;
 import com.example.vandrabyapp.activities.main.pages.swipes.SwipesFragment;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String PROFILE_FRAGMENT_TAG = "ProfileFragment";
     private static final String SWIPES_FRAGMENT_TAG = "SwipesFragment";
-    private static final String CREATE_TRIP_FRAGMENT_TAG = "CreateTripFragment";
+    private static final String CREATE_ROUTE_FRAGMENT_TAG = "CreateRouteFragment";
     private static final String PLACE_DETAILS_FRAGMENT_TAG = "PlaceDetailsFragment";
 
     private NavigationBarView bottomNavigationBar;
@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.item_swipes:
                     return loadSwipesPage();
-                case R.id.item_trips:
-                    return loadCreateTripsPage();
+                case R.id.item_routes:
+                    return loadCreateRoutesPage();
                 case R.id.item_profile:
                     return loadProfilePage();
                 default:
@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private boolean loadCreateTripsPage() {
-        loadFragment(CreateTripFragment.newInstance(), CREATE_TRIP_FRAGMENT_TAG, true);
+    private boolean loadCreateRoutesPage() {
+        loadFragment(CreateRouteFragment.newInstance(), CREATE_ROUTE_FRAGMENT_TAG, true);
         return true;
     }
 

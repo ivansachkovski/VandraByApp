@@ -11,7 +11,7 @@
         app:cardCornerRadius="5dp">
 
         <ImageView
-            android:id="@+id/image_trip_photo"
+            android:id="@+id/image_route_photo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:foreground="@drawable/layout_gradient_dark"
@@ -26,11 +26,11 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/text_trip_name"
+                android:id="@+id/text_route_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="@string/text_default_trip_name"
+                android:text="@string/text_default_route_name"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />

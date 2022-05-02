@@ -27,7 +27,7 @@ public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.Fragmen
             case 0:
                 return LikedPlacesPage.newInstance();
             case 1:
-                return TripsPage.newInstance();
+                return RoutesPage.newInstance();
             case 2:
                 return StatisticPage.newInstance();
         }
@@ -61,9 +61,9 @@ public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.Fragmen
     }
 
     // TODO::pass arguments
-    static public class TripsPage extends Fragment {
-        public static TripsPage newInstance() {
-            return new TripsPage();
+    static public class RoutesPage extends Fragment {
+        public static RoutesPage newInstance() {
+            return new RoutesPage();
         }
 
         @Override
@@ -74,8 +74,8 @@ public class ProfileTabsStateAdapter extends androidx.viewpager2.adapter.Fragmen
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab_trips, null);
-            view.setAdapter(new ProfileTripsTabAdapter(DataModel.getInstance().getTrips()));
+            RecyclerView view = (RecyclerView) inflater.inflate(R.layout.list_item_profile_tab_routes, null);
+            view.setAdapter(new ProfileRoutesTabAdapter(DataModel.getInstance().getRoutes()));
             return view;
         }
     }

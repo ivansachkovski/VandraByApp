@@ -10,26 +10,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vandrabyapp.R;
-import com.example.vandrabyapp.activities.main.MainActivity;
-import com.example.vandrabyapp.model.entities.Place;
-import com.example.vandrabyapp.model.entities.Trip;
+import com.example.vandrabyapp.model.entities.Route;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 
-public class ProfileTripsTabAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ProfileRoutesTabAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private final List<Trip> items;
+    private final List<Route> items;
 
-    public ProfileTripsTabAdapter(List<Trip> items) {
+    public ProfileRoutesTabAdapter(List<Route> items) {
         this.items = items;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new PlaceViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_profile_tab_trips_item, parent, false));
+        return new PlaceViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_profile_tab_routes_item, parent, false));
     }
 
     @Override
@@ -49,26 +47,26 @@ public class ProfileTripsTabAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
     static class PlaceViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private Trip trip;
+        private Route route;
 
-        private final ImageView imageTripPhoto;
-        private final TextView textTripName;
+        private final ImageView imageRoutePhoto;
+        private final TextView textRouteName;
 
         PlaceViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            imageTripPhoto = itemView.findViewById(R.id.image_trip_photo);
-            textTripName = itemView.findViewById(R.id.text_trip_name);
+            imageRoutePhoto = itemView.findViewById(R.id.image_route_photo);
+            textRouteName = itemView.findViewById(R.id.text_route_name);
 
             itemView.setOnClickListener(this);
         }
 
-        void fillItem(Trip item) {
-            trip = item;
+        void fillItem(Route item) {
+            route = item;
 
-            // todo::use another trip picture
-            textTripName.setText(item.getName());
-            Picasso.with(imageTripPhoto.getContext()).load(item.getPlaces().get(0).getPhotoUrls().get(0)).fit().into(imageTripPhoto);
+            // todo::use another route picture
+            textRouteName.setText(item.getName());
+            Picasso.with(imageRoutePhoto.getContext()).load(item.getPlaces().get(0).getPhotoUrls().get(0)).fit().into(imageRoutePhoto);
         }
 
         @Override

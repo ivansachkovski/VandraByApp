@@ -1,17 +1,17 @@
-package com.example.vandrabyapp.activities.main.pages.createtrip;
+package com.example.vandrabyapp.activities.main.pages.createroute;
 
 import com.example.vandrabyapp.model.database.DataModel;
 import com.example.vandrabyapp.model.entities.Place;
-import com.example.vandrabyapp.model.entities.Trip;
+import com.example.vandrabyapp.model.entities.Route;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateTripFragmentModel implements CreateTripFragmentContract.Model {
+public class CreateRouteFragmentModel implements CreateRouteFragmentContract.Model {
 
     private final List<Place> places;
 
-    public CreateTripFragmentModel() {
+    public CreateRouteFragmentModel() {
         places = new ArrayList<>();
     }
 
@@ -26,11 +26,11 @@ public class CreateTripFragmentModel implements CreateTripFragmentContract.Model
     }
 
     @Override
-    public void saveTrip() {
-        // todo::choose trip id randomly
-        Trip trip = new Trip(1, "Новый маршрут", places);
+    public void saveRoute() {
+        // todo::choose route id randomly
+        Route route = new Route(1, "Новый маршрут", places);
 
         DataModel model = DataModel.getInstance();
-        model.addTrip(trip);
+        model.addRoute(route);
     }
 }

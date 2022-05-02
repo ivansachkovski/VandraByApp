@@ -9,9 +9,9 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/item_trips"
-        android:icon="@drawable/ic_footer_trips"
-        android:title="@string/menu_trips"
+        android:id="@+id/item_routes"
+        android:icon="@drawable/ic_footer_routes"
+        android:title="@string/menu_routes"
         app:showAsAction="ifRoom" />
 
     <item

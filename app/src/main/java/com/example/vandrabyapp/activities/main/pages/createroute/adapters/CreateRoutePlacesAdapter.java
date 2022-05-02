@@ -1,4 +1,4 @@
-package com.example.vandrabyapp.activities.main.pages.createtrip.adapters;
+package com.example.vandrabyapp.activities.main.pages.createroute.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,19 +10,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vandrabyapp.R;
-import com.example.vandrabyapp.activities.main.pages.createtrip.CreateTripFragmentContract;
+import com.example.vandrabyapp.activities.main.pages.createroute.CreateRouteFragmentContract;
 import com.example.vandrabyapp.model.entities.Place;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 
-public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CreateRoutePlacesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private final CreateTripFragmentContract.Presenter presenter;
+    private final CreateRouteFragmentContract.Presenter presenter;
     private final List<Place> items;
 
-    public CreateTripPlacesAdapter(CreateTripFragmentContract.Presenter presenter, List<Place> items) {
+    public CreateRoutePlacesAdapter(CreateRouteFragmentContract.Presenter presenter, List<Place> items) {
         this.presenter = presenter;
         this.items = items;
     }
@@ -57,11 +57,11 @@ public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.V
         private final TextView textPlaceName;
         private final TextView textPlaceLocation;
 
-        private final CreateTripFragmentContract.Presenter presenter;
+        private final CreateRouteFragmentContract.Presenter presenter;
 
         private boolean isSelected = false; // by default all the places are unselected
 
-        PlaceViewHolder(@NonNull View itemView, CreateTripFragmentContract.Presenter presenter) {
+        PlaceViewHolder(@NonNull View itemView, CreateRouteFragmentContract.Presenter presenter) {
             super(itemView);
 
             imagePlacePhoto = itemView.findViewById(R.id.image_place_photo);
@@ -95,9 +95,9 @@ public class CreateTripPlacesAdapter extends RecyclerView.Adapter<RecyclerView.V
             // Re-draw current item
             fillItem(place);
             if (isSelected) {
-                presenter.addPlaceToTrip(place);
+                presenter.addPlaceToRoute(place);
             } else {
-                presenter.removePlaceFromTrip(place);
+                presenter.removePlaceFromRoute(place);
             }
         }
     }
