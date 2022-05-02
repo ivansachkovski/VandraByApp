@@ -26,9 +26,9 @@ public class CreateRouteFragmentModel implements CreateRouteFragmentContract.Mod
     }
 
     @Override
-    public void saveRoute() {
+    public void saveRoute(String routeName) {
         // todo::choose route id randomly
-        Route route = new Route(1, "Новый маршрут", places);
+        Route route = new Route(1, routeName, places);
 
         DataModel model = DataModel.getInstance();
         model.addRoute(route);

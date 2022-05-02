@@ -1,9 +1,12 @@
 package com.example.vandrabyapp.activities.main.pages.createroute;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -65,10 +68,30 @@ public class CreateRouteFragment extends Fragment implements CreateRouteFragment
 
     @Override
     public void openSaveRouteDialog() {
-        // 1. Open Save Route Dialog with 1 edit box and 1 button "Save"
-        // 2. If user click "Save" - save route and go to Profile page
-        MainActivity mainActivity = (MainActivity) getActivity();
-        assert mainActivity != null;
-        mainActivity.openProfilePage();
+        // Create custom dialog
+        Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.activity_main_create_route_save_route_dialog);
+        //dialog.getWindow().setBackgroundDrawable();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setCancelable(true);
+
+        // Attach listener to 'Save' button
+        Button buttonSaveRoute = dialog.findViewById(R.id.button_save);
+        buttonSaveRoute.setOnClickListener(v -> {
+            // Save route
+            TextView editRouteName = dialog.findViewById(R.id.edit_route_name);
+            presenter.saveRoute(editRouteName.getText().toString());
+
+            // Close dialog
+            dialog.dismiss();
+
+            // Open Profile page
+            MainActivity mainActivity = (MainActivity) getActivity();
+            assert mainActivity != null;
+            mainActivity.openProfilePage();
+        });
+
+        // Show custom dialog
+        dialog.show();
     }
 }

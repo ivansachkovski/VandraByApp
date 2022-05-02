@@ -15,7 +15,7 @@ public interface CreateRouteFragmentContract {
     interface Model {
         void addPlace(Place place);
         void removePlace(Place place);
-        void saveRoute();
+        void saveRoute(String routeName);
     }
 
     interface Presenter {
@@ -25,5 +25,6 @@ public interface CreateRouteFragmentContract {
 
         void addPlaceToRoute(Place place);
         void removePlaceFromRoute(Place place);
+        void saveRoute(String routeName);
     }
 }

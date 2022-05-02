@@ -27,7 +27,6 @@ public class CreateRouteFragmentPresenter implements CreateRouteFragmentContract
     @Override
     public void clickSaveRoute() {
         // todo::load data from the screen
-        model.saveRoute();
         view.openSaveRouteDialog();
     }
 
@@ -39,5 +38,10 @@ public class CreateRouteFragmentPresenter implements CreateRouteFragmentContract
     @Override
     public void removePlaceFromRoute(Place place) {
         model.removePlace(place);
+    }
+
+    @Override
+    public void saveRoute(String routeName) {
+        model.saveRoute(routeName);
     }
 }

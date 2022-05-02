@@ -4,6 +4,7 @@
     <!--hints for edit boxes-->
     <string name="hint_enter_your_email">Введите ваш e-mail</string>
     <string name="hint_enter_your_password">Введите ваш пароль</string>
+    <string name="hint_name_your_route">Назовите ваш маршрут</string>
 
     <!--text for labels and buttons-->
     <string name="text_enter">Войти</string>
@@ -17,7 +18,10 @@
     <string name="text_start_point">Откуда поедете?</string>
     <string name="text_end_point">Выберите конечную точку маршрута.</string>
     <string name="text_save_route">Сохранить маршрут</string>
-    
+    <string name="text_save">Сохранить</string>
+    <string name="text_route">Маршрут</string>
+    <string name="text_route_name">Название маршрута</string>
+
     <!--text for radio buttons-->
     <string name="text_my_location">Моё местоположение</string>
     <string name="text_indicate_on_map">Указать на карте</string>
