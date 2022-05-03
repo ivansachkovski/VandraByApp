@@ -1,6 +1,9 @@
 package com.example.vandrabyapp.activities.main;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -23,10 +26,25 @@ public class MainActivity extends AppCompatActivity {
 
     private NavigationBarView bottomNavigationBar;
 
+    // TextView is used as button
+    private TextView buttonBack;
+
+    private ImageButton buttonSettings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        buttonBack = findViewById(R.id.text_back);
+        buttonBack.setOnClickListener(view -> {
+            onBackPressed();
+        });
+
+        buttonSettings = findViewById(R.id.button_settings);
+        buttonSettings.setOnClickListener(view -> {
+            loadSettingsMenuPage();
+        });
 
         bottomNavigationBar = findViewById(R.id.bottom_navigation_panel);
         bottomNavigationBar.setOnItemSelectedListener(item -> {
@@ -56,22 +74,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean loadSwipesPage() {
+        buttonBack.setVisibility(View.INVISIBLE);
+        buttonSettings.setVisibility(View.INVISIBLE);
         loadFragment(SwipesFragment.newInstance(), SWIPES_FRAGMENT_TAG, true);
         return true;
     }
 
     private boolean loadCreateRoutesPage() {
+        buttonBack.setVisibility(View.INVISIBLE);
+        buttonSettings.setVisibility(View.INVISIBLE);
         loadFragment(CreateRouteFragment.newInstance(), CREATE_ROUTE_FRAGMENT_TAG, true);
         return true;
     }
 
     private boolean loadProfilePage() {
+        buttonBack.setVisibility(View.INVISIBLE);
+        buttonSettings.setVisibility(View.VISIBLE);
         loadFragment(ProfileFragment.newInstance(), PROFILE_FRAGMENT_TAG, true);
         return true;
     }
 
     private void loadPlaceDetailsPage(Place place, boolean shouldRate) {
+        buttonBack.setVisibility(View.VISIBLE);
+        buttonSettings.setVisibility(View.INVISIBLE);
         loadFragment(PlaceDetailsFragment.newInstance(place, shouldRate), PLACE_DETAILS_FRAGMENT_TAG, true);
+    }
+
+    private void loadSettingsMenuPage() {
+        buttonBack.setVisibility(View.VISIBLE);
+        buttonSettings.setVisibility(View.INVISIBLE);
+        // todo::load
+        //loadFragment(PlaceDetailsFragment.newInstance(place, shouldRate), PLACE_DETAILS_FRAGMENT_TAG, true);
     }
 
     private void loadFragment(Fragment fragment, String tag, boolean saveState) {
