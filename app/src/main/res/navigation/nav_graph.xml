@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.vandrabyapp.activities.main.pages.profile.ProfileFragment"
+        android:label="activity_main_profile"
+        tools:layout="@layout/activity_main_profile" />
+
+    <fragment
+        android:id="@+id/swipesFragment"
+        android:name="com.example.vandrabyapp.activities.main.pages.swipes.SwipesFragment"
+        android:label="activity_main_swipes"
+        tools:layout="@layout/activity_main_swipes" />
+
+    <navigation
+        android:id="@+id/createRouteFragment"
+        app:startDestination="@id/createRouteFragment1">
+
+        <fragment
+            android:id="@+id/createRouteFragment1"
+            android:name="com.example.vandrabyapp.activities.main.pages.createroute.subpages.CreateRouteSubpage1Fragment"
+            android:label="CreateRouteFragment1"
+            tools:layout="@layout/activity_main_create_route_1">
+            <action
+                android:id="@+id/action_createRouteFragment1_to_createRouteFragment2"
+                app:destination="@id/createRouteFragment2" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/createRouteFragment2"
+            android:name="com.example.vandrabyapp.activities.main.pages.createroute.subpages.CreateRouteSubpage2Fragment"
+            android:label="CreateRouteFragment2"
+            tools:layout="@layout/activity_main_create_route_2">
+            <action
+                android:id="@+id/action_createRouteFragment2_to_createRouteFragment3"
+                app:destination="@id/createRouteFragment3" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/createRouteFragment3"
+            android:name="com.example.vandrabyapp.activities.main.pages.createroute.subpages.CreateRouteSubpage3Fragment"
+            android:label="CreateRouteFragment3"
+            tools:layout="@layout/activity_main_create_route_3">
+            <action
+                android:id="@+id/action_createRouteFragment3_to_profileFragment"
+                app:destination="@id/profileFragment" />
+        </fragment>
+
+    </navigation>
+
+</navigation>

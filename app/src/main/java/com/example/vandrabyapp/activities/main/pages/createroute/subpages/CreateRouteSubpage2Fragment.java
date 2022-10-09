@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.vandrabyapp.R;
 import com.example.vandrabyapp.activities.main.pages.createroute.CreateRouteFragmentContract;
@@ -14,6 +15,10 @@ import com.example.vandrabyapp.activities.main.pages.createroute.CreateRouteFrag
 public class CreateRouteSubpage2Fragment extends Fragment {
 
     CreateRouteFragmentContract.Presenter presenter;
+
+    public CreateRouteSubpage2Fragment() {
+
+    }
 
     private CreateRouteSubpage2Fragment(CreateRouteFragmentContract.Presenter presenter) {
         this.presenter = presenter;
@@ -30,7 +35,7 @@ public class CreateRouteSubpage2Fragment extends Fragment {
 
         Button button_next = view.findViewById(R.id.button_next);
         button_next.setOnClickListener(v -> {
-            presenter.clickNextOnSubpage2();
+            Navigation.findNavController(view).navigate(R.id.action_createRouteFragment2_to_createRouteFragment3);
         });
 
         return view;

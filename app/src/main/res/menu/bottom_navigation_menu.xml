@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/item_swipes"
+        android:id="@+id/swipesFragment"
         android:icon="@drawable/ic_footer_swipes"
-        android:title="@string/menu_swipes"
-        app:showAsAction="ifRoom" />
+        android:title="@string/menu_swipes" />
 
     <item
-        android:id="@+id/item_routes"
+        android:id="@+id/createRouteFragment"
         android:icon="@drawable/ic_footer_routes"
-        android:title="@string/menu_routes"
-        app:showAsAction="ifRoom" />
+        android:title="@string/menu_routes" />
 
     <item
-        android:id="@+id/item_profile"
+        android:id="@+id/profileFragment"
         android:icon="@drawable/ic_footer_profile"
-        android:title="@string/menu_profile"
-        app:showAsAction="ifRoom" />
+        android:title="@string/menu_profile" />
 
 </menu>

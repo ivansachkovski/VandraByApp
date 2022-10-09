@@ -17,14 +17,14 @@ import com.example.vandrabyapp.model.entities.Place;
 
 public class SwipesFragment extends Fragment implements SwipesFragmentContract.View {
 
-    private final SwipesFragmentPresenter presenter;
+    private final SwipesFragmentPresenter presenter=null;
 
     private CardView viewRoot;
     private TextView viewPlaceName;
 
-    private SwipesFragment() {
-        presenter = new SwipesFragmentPresenter(this);
-    }
+    //public SwipesFragment() {
+    //    presenter = new SwipesFragmentPresenter(this);
+    //}
 
     public static SwipesFragment newInstance() {
         return new SwipesFragment();
@@ -53,7 +53,7 @@ public class SwipesFragment extends Fragment implements SwipesFragmentContract.V
             presenter.clickOpenPlaceDetails();
         });
 
-        presenter.invalidateScreen();
+        //presenter.invalidateScreen();
 
         return view;
     }
@@ -62,11 +62,11 @@ public class SwipesFragment extends Fragment implements SwipesFragmentContract.V
     public void showPlaceToRate(Place place) {
         viewPlaceName.setText(place.getName());
 
-        Fragment fragment = SwipesPhotoFragment.newInstance(place.getPhotoUrls());
+//        Fragment fragment = SwipesPhotoFragment.newInstance(place.getPhotoUrls());
 
-        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.layout_photo, fragment);
-        fragmentTransaction.commit();
+//        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+//        fragmentTransaction.replace(R.id.layout_photo, fragment);
+//        fragmentTransaction.commit();
 
         viewRoot.setVisibility(View.VISIBLE);
     }

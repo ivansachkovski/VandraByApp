@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/layout_gradient_blue"
-    tools:context=".activities.main.MainActivity">
+    tools:context=".activities.main.pages.details.PlaceDetailsFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
